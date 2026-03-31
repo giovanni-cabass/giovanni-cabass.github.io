@@ -1,0 +1,18 @@
+title: Giovanni Cabass
+description: Physicist & ML researcher
+url: "https://giovanni-cabass.github.io"
+baseurl: ""
+author: Giovanni Cabass
+permalink: /writing/:year/:month/:day/:title/
+collections:
+  pages:
+    output: true
+    permalink: /:name/
+
+markdown: kramdown
+highlighter: rouge
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor

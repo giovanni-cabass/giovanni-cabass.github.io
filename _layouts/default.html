@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include head.html %}
+</head>
+<body{% if page.body_class %} class="{{ page.body_class }}"{% endif %}>
+  <div class="site-bg" aria-hidden="true">
+    <img src="/assets/images/hero-bg.jpg" alt="">
+    <div class="site-bg-fade"></div>
+  </div>
+  {% include header.html %}
+  <main class="page-content">
+    {{ content }}
+  </main>
+  {% include footer.html %}
+  <script src="{{ '/assets/js/theme-toggle.js' | relative_url }}"></script>
+</body>
+</html>
