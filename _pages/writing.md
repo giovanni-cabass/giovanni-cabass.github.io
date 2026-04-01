@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Notes
-permalink: /writing/
+permalink: /notes/
 ---
 
 {% if site.posts.size > 0 %}

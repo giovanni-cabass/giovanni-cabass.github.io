@@ -3,7 +3,7 @@ description: Physicist & ML researcher
 url: "https://giovanni-cabass.github.io"
 baseurl: ""
 author: Giovanni Cabass
-permalink: /writing/:year/:month/:day/:title/
+permalink: /notes/:year/:month/:day/:title/
 collections:
   pages:
     output: true
@@ -14,6 +14,8 @@ sass:
 
 markdown: kramdown
 highlighter: rouge
+kramdown:
+  math_engine: mathjax
 exclude:
   - Gemfile
   - Gemfile.lock
