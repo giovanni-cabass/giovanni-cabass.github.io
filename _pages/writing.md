@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Writing
+title: Notes
 permalink: /writing/
 ---
 
@@ -10,7 +10,7 @@ permalink: /writing/
   <li class="post-entry">
     <div class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></div>
     <div class="post-date">{{ post.date | date: "%B %-d, %Y" }}</div>
-    {% if post.excerpt %}<div class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</div>{% endif %}
+    {% if post.excerpt %}<div class="post-excerpt">{{ post.excerpt }}</div>{% endif %}
   </li>
   {% endfor %}
 </ul>

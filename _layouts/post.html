@@ -15,7 +15,13 @@ layout: default
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
 <script>
   MathJax = {
-    tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      macros: {
+          bm: ['\\boldsymbol{#1}', 1],
+          hp: ['\\hphantom{#1}', 1]
+        }
+    },
     svg: { fontCache: 'global' }
   };
 </script>
