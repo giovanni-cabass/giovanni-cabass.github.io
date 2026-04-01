@@ -75,7 +75,7 @@ p {
 .page-content {
   max-width: 780px;
   margin: 0 auto;
-  padding: 4rem 1.5rem 2rem;
+  padding: 2.5rem 1.5rem 2rem;
 }
 
 // ─── Navigation ────────────────────────────────────────────────────────────
@@ -430,7 +430,7 @@ body {
 }
 
 .writing-empty {
-  color: var(--color-muted);
+  color: #aaaaaa;
   font-style: italic;
   margin-top: 1.5rem;
 }
@@ -457,6 +457,48 @@ body {
     height: 80vh;
     border: 1px solid var(--color-border);
     border-radius: 4px;
+  }
+}
+
+// ─── Research page images ──────────────────────────────────────────────────
+
+.research-img {
+  float: right;
+  width: 260px;
+  margin: 0 0 1rem 1.5rem;
+  border-radius: 4px;
+
+  @media (max-width: 600px) {
+    float: none;
+    width: 100%;
+    margin: 0 0 1rem 0;
+  }
+}
+
+// ─── Page & post titles ────────────────────────────────────────────────────
+// Always light — appears over the dark background image in both themes
+
+.page-title {
+  color: #d4d4d4;
+  margin-bottom: 1.5rem;
+}
+
+.post-meta {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  margin-bottom: 2rem;
+}
+
+.post-content {
+  h2, h3, h4 { margin-top: 2rem; }
+
+  pre { margin: 1.5rem 0; }
+
+  code:not([class]) {
+    background: var(--color-code-bg);
+    padding: 0.1em 0.35em;
+    border-radius: 3px;
+    font-size: 0.9em;
   }
 }
 

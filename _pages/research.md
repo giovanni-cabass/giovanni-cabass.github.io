@@ -4,39 +4,34 @@ title: Research
 permalink: /research/
 ---
 
-<ul class="pub-list">
+*Placeholder intro — e.g. a link to InspireHEP for the full publication list.*
 
-  <li class="pub-entry">
-    <div class="pub-title">Placeholder paper title one</div>
-    <div class="pub-authors">G. Cabass, Author Two, Author Three</div>
-    <div class="pub-venue">Journal of Placeholder Physics, 2024</div>
-    <div class="pub-links">
-      <a href="#">PDF</a>
-      <a href="#">arXiv</a>
-      <a href="#">DOI</a>
-    </div>
-  </li>
+## Primordial non-Gaussianity
 
-  <li class="pub-entry">
-    <div class="pub-title">Placeholder paper title two</div>
-    <div class="pub-authors">G. Cabass, Author Two</div>
-    <div class="pub-venue">Physical Review Letters, 2023</div>
-    <div class="pub-links">
-      <a href="#">PDF</a>
-      <a href="#">arXiv</a>
-      <a href="#">DOI</a>
-    </div>
-  </li>
+<img src="/assets/images/research/png-placeholder.png" alt="Primordial non-Gaussianity" class="research-img">
 
-  <li class="pub-entry">
-    <div class="pub-title">Placeholder paper title three</div>
-    <div class="pub-authors">Author One, G. Cabass, Author Three, Author Four</div>
-    <div class="pub-venue">Journal of Cosmology and Astroparticle Physics, 2022</div>
-    <div class="pub-links">
-      <a href="#">PDF</a>
-      <a href="#">arXiv</a>
-      <a href="#">DOI</a>
-    </div>
-  </li>
+Placeholder description. Replace with a few sentences on what the problem is, what you have done, and why it matters.
 
-</ul>
+Key papers: [Author & Cabass 2024](#), [Cabass et al. 2023](#)
+
+<div style="clear:both"></div>
+
+## Large-scale structure and field-level inference
+
+<img src="/assets/images/research/lss-placeholder.png" alt="Large-scale structure" class="research-img">
+
+Placeholder description. Replace with a few sentences on what the problem is, what you have done, and why it matters.
+
+Key papers: [Cabass et al. 2024](#), [Author, Cabass & Author 2022](#)
+
+<div style="clear:both"></div>
+
+## Machine learning for cosmology
+
+<img src="/assets/images/research/ml-placeholder.png" alt="ML for cosmology" class="research-img">
+
+Placeholder description. Replace with a few sentences on what the problem is, what you have done, and why it matters.
+
+Key papers: [Cabass & Author 2023](#)
+
+<div style="clear:both"></div>
