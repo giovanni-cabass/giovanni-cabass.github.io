@@ -75,15 +75,18 @@ p {
 .page-content {
   max-width: 780px;
   margin: 0 auto;
-  padding: 2rem 1.5rem;
+  padding: 4rem 1.5rem 2rem;
 }
 
 // ─── Navigation ────────────────────────────────────────────────────────────
 
 .site-header {
+  // Always light — header sits over the dark galaxy image in all themes
+  --color-nav-text: #e8e8e8;
+  --color-link:     #b8d4f0;
+  --color-border:   rgba(255, 255, 255, 0.15);
   border-bottom: 1px solid var(--color-border);
   padding: 1rem 0;
-  transition: border-color 0.2s ease;
 }
 
 .site-nav {
@@ -92,7 +95,7 @@ p {
   padding: 0 1.5rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .site-title {
@@ -121,6 +124,58 @@ p {
     &:hover, &.active {
       color: var(--color-link);
     }
+  }
+
+}
+
+// ─── Hamburger button (mobile only) ────────────────────────────────────────
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+
+  span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--color-nav-text);
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+}
+
+// ─── Responsive nav ────────────────────────────────────────────────────────
+
+@media (max-width: 600px) {
+  .site-header {
+    position: relative;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    background: rgba(10, 10, 20, 0.95);
+    padding: 0.5rem 1.5rem 1rem;
+    z-index: 100;
+
+    li { width: 100%; padding: 0.5rem 0; }
+
+    &.nav-open { display: flex; }
   }
 }
 
@@ -163,6 +218,7 @@ body {
   width: 100%;
   z-index: -1;
   pointer-events: none;
+  overflow: hidden;
 
   img {
     width: 100%;
@@ -170,18 +226,14 @@ body {
   }
 }
 
-// Fade overlay — tune these two values:
-//   top:    where the fade starts (from top of viewport)
-//   height: how long the fade takes
 .site-bg-fade {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 300vh;
-  height: 300dvh;
+  height: 100%;  // match image height exactly; overflow:hidden clips the rest
   pointer-events: none;
-  // vh fallback
+  // vh fallback — gradient goes solid at 40vh, then stays solid to end of image
   background: linear-gradient(to bottom,
     var(--color-bg-t)                                            0,
     color-mix(in srgb, var(--color-bg)  4%, var(--color-bg-t))  7vh,
@@ -190,7 +242,8 @@ body {
     color-mix(in srgb, var(--color-bg) 52%, var(--color-bg-t)) 25vh,
     color-mix(in srgb, var(--color-bg) 75%, var(--color-bg-t)) 31vh,
     color-mix(in srgb, var(--color-bg) 92%, var(--color-bg-t)) 37vh,
-    var(--color-bg)                                             40vh
+    var(--color-bg)                                             40vh,
+    var(--color-bg)                                             100%
   );
   // dvh override for mobile
   background: linear-gradient(to bottom,
@@ -201,7 +254,8 @@ body {
     color-mix(in srgb, var(--color-bg) 52%, var(--color-bg-t)) 25dvh,
     color-mix(in srgb, var(--color-bg) 75%, var(--color-bg-t)) 31dvh,
     color-mix(in srgb, var(--color-bg) 92%, var(--color-bg-t)) 37dvh,
-    var(--color-bg)                                             40dvh
+    var(--color-bg)                                             40dvh,
+    var(--color-bg)                                             100%
   );
 }
 
@@ -212,10 +266,197 @@ body {
     font-size: 2.5rem;
     margin-bottom: 0.4rem;
   }
+}
 
-  p {
-    font-size: 1.1rem;
+.home-subtitle {
+  font-size: 1.1rem;
+  color: var(--color-muted);
+  margin-bottom: 0;
+}
+
+.home-bio {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  color: var(--color-text);
+  max-width: 540px;
+}
+
+.home-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 2.5rem;
+  margin-top: 2.5rem;
+
+  a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
     color: var(--color-muted);
+    text-decoration: none;
+
+    i { font-size: 1.4rem; }
+
+    span {
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    &:hover {
+      color: var(--color-link);
+      text-decoration: none;
+    }
+  }
+}
+
+// ─── Research / Publications ────────────────────────────────────────────────
+
+.pub-list {
+  list-style: none;
+  margin-top: 1.5rem;
+}
+
+.pub-entry {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--color-border);
+
+  &:last-child { border-bottom: none; }
+
+  .pub-title {
+    font-weight: bold;
+    margin-bottom: 0.2rem;
+  }
+
+  .pub-authors {
+    color: var(--color-muted);
+    font-size: 0.9rem;
+    margin-bottom: 0.15rem;
+  }
+
+  .pub-venue {
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--color-muted);
+    margin-bottom: 0.5rem;
+  }
+
+  .pub-links {
+    display: flex;
+    gap: 0.75rem;
+
+    a { font-size: 0.85rem; }
+  }
+}
+
+// ─── ML Projects ───────────────────────────────────────────────────────────
+
+.project-list {
+  list-style: none;
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.project-card {
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: 1.25rem 1.5rem;
+  transition: border-color 0.2s ease;
+
+  &:hover { border-color: var(--color-link); }
+
+  .project-title {
+    font-weight: bold;
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .project-desc {
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 0.75rem;
+
+    span {
+      font-size: 0.75rem;
+      background: var(--color-code-bg);
+      color: var(--color-muted);
+      padding: 0.15rem 0.5rem;
+      border-radius: 3px;
+    }
+  }
+
+  .project-links {
+    display: flex;
+    gap: 0.75rem;
+
+    a { font-size: 0.85rem; }
+  }
+}
+
+// ─── Writing / Blog ─────────────────────────────────────────────────────────
+
+.post-list {
+  list-style: none;
+  margin-top: 1.5rem;
+}
+
+.post-entry {
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--color-border);
+
+  &:last-child { border-bottom: none; }
+
+  .post-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 0.2rem;
+  }
+
+  .post-date {
+    font-size: 0.85rem;
+    color: var(--color-muted);
+    margin-bottom: 0.4rem;
+  }
+
+  .post-excerpt { font-size: 0.95rem; }
+}
+
+.writing-empty {
+  color: var(--color-muted);
+  font-style: italic;
+  margin-top: 1.5rem;
+}
+
+// ─── Contact ────────────────────────────────────────────────────────────────
+
+.contact-info {
+  margin-top: 1.5rem;
+
+  p { margin-bottom: 1.25rem; }
+
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+.cv-embed {
+  margin-top: 2rem;
+
+  iframe {
+    width: 100%;
+    height: 80vh;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
   }
 }
 

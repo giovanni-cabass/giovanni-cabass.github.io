@@ -4,38 +4,19 @@ title: About
 permalink: /about/
 ---
 
-This is placeholder text to test scrolling behaviour. Replace with real content later.
+## Bio
 
-I am a physicist and machine learning researcher. My work sits at the intersection of
-theoretical cosmology and modern data-driven methods. I completed my PhD in theoretical
-physics, where I focused on primordial non-Gaussianity and large-scale structure.
+Placeholder bio paragraph. Replace with a few sentences about your background, current position, and research focus.
 
-More placeholder text below to make the page long enough to scroll.
+## Education
 
-My research interests include the cosmic microwave background, inflationary cosmology,
-field-level inference, and the application of machine learning techniques to problems
-in cosmology and high-energy physics.
+- **PhD in Physics** — University Placeholder, Year
+- **MSc in Physics** — University Placeholder, Year
+- **BSc in Physics** — University Placeholder, Year
 
-Placeholder paragraph three. The quick brown fox jumps over the lazy dog.
-The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
-The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
+## Research interests
 
-Placeholder paragraph four. The quick brown fox jumps over the lazy dog.
-The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
-The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
-
-Placeholder paragraph five. The quick brown fox jumps over the lazy dog.
-The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
-The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
-
-Placeholder paragraph six. The quick brown fox jumps over the lazy dog.
-The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
-The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
-
-Placeholder paragraph seven. The quick brown fox jumps over the lazy dog.
-The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
-The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
-
-Placeholder paragraph eight. The quick brown fox jumps over the lazy dog.
-The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
-The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.
+- Primordial non-Gaussianity and inflationary cosmology
+- Large-scale structure and field-level inference
+- Machine learning methods for cosmology and high-energy physics
+- Placeholder interest four

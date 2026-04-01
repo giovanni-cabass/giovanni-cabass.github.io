@@ -9,6 +9,9 @@ collections:
     output: true
     permalink: /:name/
 
+sass:
+  silence_deprecations: [import]
+
 markdown: kramdown
 highlighter: rouge
 exclude:
