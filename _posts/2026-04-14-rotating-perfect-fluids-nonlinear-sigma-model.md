@@ -95,6 +95,11 @@ A structural distinction from the case of a constant target metric $G_{IJ} = \ma
 
 $$U^\mu = \frac{1}{r\sqrt{D}}\,(1,\,0,\,\dot\varphi_{0},\,0)\,\,.$$
 
+<figure>
+  <img src="/assets/images/worldlines_constant_rotation.png" alt="Fluid element worldlines for constant rigid rotation in cylindrical spacetime">
+  <figcaption>Fluid element worldlines for the constant-rotation ansatz ($\omega = \mathrm{const}$) in the $(x,y,t)$ space. Inside the light cylinder $r_{\mathrm{lc}}$ (shaded blue) the worldlines are timelike helices (solid black); at $r_{\mathrm{lc}}$ they become null (dashed); outside they would be spacelike (dotted). The light cones at selected events confirm that $U^\mu$ is timelike only for $r &lt; r_{\mathrm{lc}}$.</figcaption>
+</figure>
+
 ---
 
 ## Equations of motion
@@ -177,13 +182,43 @@ solvable by a single quadrature regardless of $F$. Two consistency checks: the c
 
 ---
 
+## The light cylinder
+
+Setting $c^{1} = c^{3} = 1$ for concreteness, $A = 1$ and $X = 1 - v$, where $v \equiv \omega^{2}(r)r^{2}$ is the squared tangential velocity defined earlier. The sub-luminal condition $D > 0$ requires $v < 1$; the **light cylinder** $r_{\rm lc}$ is the radius where $\omega(r_{\rm lc})\,r_{\rm lc} = 1$, i.e.\ $v(r_{\rm lc}) = 1$.
+
+For the general $\gamma \neq 1$ polytrope (with normalization $C = \lambda = 1$), the function $h(v;\gamma)$ in the separable ODE $rv' = h(v;\gamma)$ evaluates to
+
+$$h(v;\gamma) = -\frac{2v}{\gamma}\!\left[(1-v)^{(1-\gamma)/2} - 1\right]\,\,.$$
+
+For $\gamma > 1$ and $v \in (0,1)$, the exponent $(1-\gamma)/2 < 0$ so $(1-v)^{(1-\gamma)/2} > 1$, which gives $h(v;\gamma) < 0$. This means the antiderivative $G_{\gamma}(v) \equiv \int {\rm d}v/h(v;\gamma)$ is strictly decreasing on $(0,1)$.
+
+The implicit solution with boundary condition $v(r_{\rm lc}) = 1$ is $G_{\gamma}(v) = c_{0} + (2/\gamma)\ln r$, where $c_{0} = \lim_{v\to 1^{-}}G_{\gamma}(v)$. Since $G_{\gamma}$ is decreasing:
+
+- $r > r_{\rm lc}$: $\ln r > 0$, so $G_{\gamma}(v) > c_{0}$, forcing $v < 1$ (sub-luminal) $\checkmark$
+- $r < r_{\rm lc}$: $\ln r < 0$, so $G_{\gamma}(v) < c_{0}$, forcing $v > 1$ (superluminal) $\times$
+
+**Polytropic solutions with $\gamma > 1$ are confined to the exterior of the light cylinder.** No stationary, axisymmetric polytropic solution touching $v = 1$ at $r_{\rm lc}$ can extend inward with $v \leq 1$. The same conclusion holds for $\gamma = 1$, where the exact solution $v = C'r^{-2/w}$ gives $v > 1$ for $r < r_{\rm lc}$.
+
+This contrasts sharply with standard relativistic hydrodynamics (RHD), where the pressure-balance equation for circular flow reads $(\rho + p)\,\Omega^{2}r/(1-\Omega^{2}r^{2}) = {\rm d}p/{\rm d}r$ — one equation for two unknown functions $\rho(r)$ and $\Omega(r)$. The equation of state closes $p$ in terms of $\rho$ but leaves $\Omega(r)$ as a free input. In particular, rigid rotation $\Omega = \mathrm{const}$ yields the Bernoulli integral $h_{\rm e}\sqrt{1-\Omega^{2}r^{2}} = \mathrm{const}$, which places the fluid comfortably *inside* the light cylinder with a consistent polytropic density profile.
+
+The difference is structural, not dynamical. In standard RHD, $\rho(r)$ and $\Omega(r)$ are independent macroscopic fields — different rotation histories of the same fluid can produce different combinations. In the sigma model, $\rho$ is a derived quantity tied to $\omega(r)$ through $X = 1 - \omega^{2}r^{2}$: once the rotation profile is chosen, the energy density is determined with no remaining freedom. One ODE for one unknown means the sign of $h(v;\gamma)$ makes confinement to $r > r_{\rm lc}$ unavoidable.
+
+The deeper reason is that the sigma model is a zero-temperature description in which all fluid quantities — energy density, pressure, number density, and 4-velocity — are derived from the same underlying object, the kinetic matrix $B^{IJ} = g^{\mu\nu}\nabla_\mu\phi^{I}\nabla_\nu\phi^{J}$. Kinematics and thermodynamics cannot be prescribed independently: both are encoded in how the fluid worldlines are arranged in Lagrangian space. Even compared to a standard $T = 0$ barotropic fluid — where $n$ and $u^\mu$ remain independent macroscopic fields — the sigma model is more constrained.
+
+<figure>
+  <img src="/assets/images/detB_polytropic.png" alt="r^2 det B vs r/r_lc for polytropic and constant-rotation equations of state">
+  <figcaption>$r^{2}\det B = 1 - \omega^{2}(r)r^{2}$ versus $r/r_{\mathrm{lc}}$ for several equations of state. All polytropic solutions ($\gamma = 1$ with $w = 1/3$ or $w = 1$; $\gamma = 4/3,\,5/3,\,2$) vanish at the light cylinder and exist only for $r &gt; r_{\mathrm{lc}}$. The constant-$\omega$ curve (black) exists only inside the light cylinder and vanishes there too. Dashed vertical line marks $r_{\mathrm{lc}}$.</figcaption>
+</figure>
+
+---
+
 ## Summary
 
 | Lagrangian $F(X)$ | Equation of state | Rotation |
 |---|---|---|
-| $\alpha\ln X + \beta$ | $p + \rho = -2\Lambda^4\alpha$ | rigid only ($\omega = \mathrm{const}$) |
+| $\alpha\ln X + \beta$ | $p + \rho = -2\Lambda^4\alpha$ | rigid only ($\omega = \mathrm{const}$), inside $r_{\rm lc}$ |
 | $C\sqrt{X}$ (dust) | $p = 0$ | $\omega = 0$ (forbidden) |
-| $-C_{0}X^{(1+w)/2}$ | $p = w\rho$ | $\omega \propto r^{-(1+w)/w}$ |
+| $-C_{0}X^{(1+w)/2}$ | $p = w\rho$ | $\omega \propto r^{-(1+w)/w}$, confined to $r > r_{\rm lc}$ |
 | general $F$ | $p = \Lambda^4(F - 2F'X)$ | determined by quadrature |
 
 The stress-energy tensor takes the perfect-fluid form for every row — indeed for every smooth $F$ and every valid field configuration.
