@@ -1,7 +1,8 @@
 ---
 layout: post
-title: "Rotating perfect fluids from a nonlinear sigma model"
+title: "Rotating perfect fluids from via the nonlinear sigma model"
 date: 2026-04-14
+excerpt: "Using the representation of a fluid via a nonlinear sigma model of three scalar fields, we discuss when the fluid can sustain a rotating profile with cylindrical symmetry. The angular frequency is forced to be constant in time, and rigid rotation can be sustained inside the light cylinder only with a very peculiar equation of state. Dust cannot rotate at all, and polytropic profiles are confined outside the light cylinder. Because this fluid has no genuine thermodynamic degrees of freedom — all thermodynamic quantities are fixed by the fluid's mechanical configuration — results differ structurally from those of standard relativistic hydrodynamics, and care is needed when making comparisons."
 ---
 
 This post works through a set of calculations on a nonlinear sigma model of three scalar fields whose stress-energy tensor takes the perfect-fluid form exactly — for every Lagrangian in the family. The fields $\phi^{I} = (r_{L}, \varphi_{L}, z_{L})$ are the Lagrangian (material) coordinates of the fluid: they label individual fluid elements, and their level sets trace out the element worldlines. The Lagrangian is $\mathcal{L} = \Lambda^4 F(X)$, where $X = \det G \cdot \det B$ packs the target-space metric determinant and kinetic matrix determinant into a single scalar. Four results stand out: the stress-energy tensor is a perfect fluid for every smooth $F$; constant rigid rotation singles out the logarithmic family $F = \alpha \ln X$ with the equation of state $p + \rho = \mathrm{const}$; a pressureless fluid ($p = 0$) cannot rotate; and for a linear equation of state $p = w\rho$ the rotation profile is the explicit power law $\omega \propto r^{-(1+w)/w}$.
@@ -112,7 +113,7 @@ For the cylindrical target metric, the Jacobi source $G^{IJ}\partial_{K}G_{IJ} =
 
 **$K=3$:** Satisfied automatically for any $F$ (the current is $z$-independent).
 
-**$K=2$:** The current $J^\mu_{2} = 2F'X\tilde{B}_{2J}g^{\mu\nu}\nabla_\nu\phi^{J}$ has $J^{r}_{2} = 0$ exactly — the $\varphi_{0}'$-dependent terms from $\tilde{B}_{21}c^{1}$ and $\tilde{B}_{22}(-\varphi_{0}')$ cancel — reducing the covariant divergence to a pure time derivative:
+**$K=2$:** The current $J_{2}^\mu = 2F'X\tilde B_{2J}g^{\mu\nu}\nabla_\nu\phi^{J}$ has $J_{2}^{r} = 0$ exactly — the $\varphi_{0}'$-dependent terms from $\tilde B_{21}c^{1}$ and $\tilde B_{22}(-\varphi_{0}')$ cancel — reducing the covariant divergence to a pure time derivative:
 
 $$\partial_{t}\!\left(F'(X)\,\dot\varphi_{0}\right) = 0\,\,.$$
 
@@ -203,7 +204,7 @@ This contrasts sharply with standard relativistic hydrodynamics (RHD), where the
 
 The difference is structural, not dynamical. In standard RHD, $\rho(r)$ and $\Omega(r)$ are independent macroscopic fields — different rotation histories of the same fluid can produce different combinations. In the sigma model, $\rho$ is a derived quantity tied to $\omega(r)$ through $X = 1 - \omega^{2}r^{2}$: once the rotation profile is chosen, the energy density is determined with no remaining freedom. One ODE for one unknown means the sign of $h(v;\gamma)$ makes confinement to $r > r_{\rm lc}$ unavoidable.
 
-The deeper reason is that the sigma model is a zero-temperature description in which all fluid quantities — energy density, pressure, number density, and 4-velocity — are derived from the same underlying object, the kinetic matrix $B^{IJ} = g^{\mu\nu}\nabla_\mu\phi^{I}\nabla_\nu\phi^{J}$. Kinematics and thermodynamics cannot be prescribed independently: both are encoded in how the fluid worldlines are arranged in Lagrangian space. Even compared to a standard $T = 0$ barotropic fluid — where $n$ and $u^\mu$ remain independent macroscopic fields — the sigma model is more constrained.
+The deeper reason is that the sigma model is a zero-temperature description in which all fluid quantities — energy density, pressure, number density, and 4-velocity — are derived from the same underlying object, the kinetic matrix $B^{IJ} = g^{\mu\nu}\nabla_\mu\phi^{I}\nabla_\nu\phi^{J}$. Kinematics and thermodynamics cannot be prescribed independently: both are encoded in how the fluid worldlines are arranged in Lagrangian space. Even compared to a standard $T = 0$ barotropic fluid — where $n$ and $u^\mu$ remain independent macroscopic fields — the sigma model is more constrained. In thermodynamic language, the fluid is not merely isentropic (each worldline preserving its own entropy) but **homoentropic**: entropy is spatially uniform, $\partial_\mu\sigma = 0$ is an algebraic identity, and $n$, $p$, $\rho$ are all determined by the single scalar $X$ — no freedom remains to prescribe $\rho$ independently of $\omega$.[^dubovsky]
 
 <figure>
   <img src="/assets/images/detB_polytropic.png" alt="r^2 det B vs r/r_lc for polytropic and constant-rotation equations of state">
@@ -222,3 +223,5 @@ The deeper reason is that the sigma model is a zero-temperature description in w
 | general $F$ | $p = \Lambda^4(F - 2F'X)$ | determined by quadrature |
 
 The stress-energy tensor takes the perfect-fluid form for every row — indeed for every smooth $F$ and every valid field configuration.
+
+[^dubovsky]: See e.g. also the discussion in [arXiv:hep-th/0512260](https://arxiv.org/abs/hep-th/0512260), Sec. 5.2.
