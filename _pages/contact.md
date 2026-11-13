@@ -9,7 +9,7 @@ permalink: /contact/
 </div>
 
 <div class="cv-embed">
-  <iframe src="/assets/cv/cv.pdf" title="Curriculum Vitae" sandbox="allow-same-origin">
+  <iframe src="/assets/cv/cv.pdf" title="Curriculum Vitae">
     <a href="/assets/cv/cv.pdf">Download CV (PDF)</a>
   </iframe>
 </div>
