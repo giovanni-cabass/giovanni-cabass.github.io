@@ -475,6 +475,14 @@ body {
   }
 }
 
+.research-img--small {
+  width: 208px;
+
+  @media (max-width: 600px) {
+    width: 100%;
+  }
+}
+
 .research-clear {
   clear: both;
 }

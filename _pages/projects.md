@@ -38,7 +38,7 @@ permalink: /projects/
 
   <li class="project-card">
     <div class="project-title">TFT for crypto forecasting</div>
-    <div class="project-desc">Relatively advanced stage, investigating how to fold physics ideas (e.g. separate-universe picture in cosmology) into addressing long-short timescale couplings. Built on cryptocurrency markets in part for the much higher data cadence available there versus traditional markets — which meant real data engineering on two separate fronts: a training dataset built by unifying crypto exchange, macro, and on-chain data onto one coherent ~8-year timeline, and, separately, a resilient, crash-safe collection pipeline — running unattended for months with zero data loss — for the options data used to develop and test the trading strategy itself. The multi-GPU training infrastructure I built for this project is public — see the link below.</div>
+    <div class="project-desc">Relatively advanced stage, investigating how to fold physics ideas (e.g. separate-universe picture in cosmology) into addressing long-short timescale couplings. Built on cryptocurrency markets in part for the much higher data cadence available there versus traditional markets — which meant real data engineering on two separate fronts: a training dataset built by unifying crypto exchange, macro, and on-chain data onto one coherent ~8-year timeline, and, separately, a resilient, crash-safe collection pipeline — running unattended for months with zero data loss — for the options data used to develop and test the trading strategy itself. The multi-GPU training infrastructure built for this project is public — see the link below.</div>
     <div class="project-tags">
       <span>PyTorch</span>
       <span>Temporal Fusion Transformer</span>
