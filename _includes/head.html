@@ -2,6 +2,40 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{% if page.title %}{{ page.title }} — {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
 <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | strip_newlines | truncate: 160 }}">
+<!-- CSP as a meta tag (GitHub Pages serves no custom HTTP headers, so this is the only
+     way to set one here).
+
+     frame-ancestors (clickjacking protection) is deliberately left out: browsers only
+     honor it as a real HTTP response header, never when delivered via a <meta> tag —
+     and GitHub Pages has no server config, so there's no way to send a real header from
+     this repo at all. The actual fix would mean fronting the site with something that
+     can inject headers (e.g. Cloudflare), not a change here. Accepted as-is: the site
+     has no login or forms, so there's little a clickjacking attack could do anyway.
+
+     script-src only allows the two pinned CDN hosts used site-wide (see the SRI'd tags
+     below and in _layouts/post.html) plus sha256 hashes for the two static inline
+     script blocks (this one, and the MathJax config block in _layouts/post.html) —
+     recompute and update the hash here if either block's exact text ever changes.
+
+     style-src needs 'unsafe-inline': MathJax's SVG output sets inline style attributes
+     at runtime (verified against the pinned mathjax@3.2.2 bundle) that a strict policy
+     would otherwise silently break. Unlike script-src, this can't be tightened further:
+     a nonce needs a server minting one per request, which a static GitHub Pages site
+     doesn't have, and a hash needs fixed content, but MathJax's inline styles are
+     generated per-page at runtime. Accepted as-is: style injection has no script to pair
+     with here, since script-src above is already locked down. -->
+<meta http-equiv="Content-Security-Policy" content="
+  default-src 'self';
+  script-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com 'sha256-Ubj08cBcZ4SQ6L2lpB5ENFCAy1/7es4eAkqMOdyBxlA=' 'sha256-7VoiE0dhFw+pv1IlrxxSp4bFeY6A9PzcBrxJsCNbIRw=';
+  style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;
+  font-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;
+  img-src 'self';
+  frame-src 'self';
+  connect-src 'self';
+  object-src 'none';
+  base-uri 'none';
+  form-action 'none';
+">
 <!-- Apply saved theme before render to prevent flash -->
 <script>
   (function() {
