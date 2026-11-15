@@ -1,11 +1,13 @@
 ---
 layout: post
-title: "Rotating perfect fluids from via the nonlinear sigma model"
+title: "Rotating perfect fluids via the nonlinear sigma model"
 date: 2026-04-14
 excerpt: "Using the representation of a (homoentropic) fluid via a nonlinear sigma model of three scalar fields, we discuss when the fluid can sustain a rotating profile with cylindrical symmetry. The angular frequency is forced to be constant in time, and rigid rotation can be sustained inside the light cylinder only with a very peculiar equation of state. Dust cannot rotate at all, and polytropic profiles are confined outside the light cylinder. Because this fluid has no genuine thermodynamic degrees of freedom — all thermodynamic quantities are fixed by the fluid's mechanical configuration — results differ structurally from those of standard relativistic hydrodynamics, and care is needed when making comparisons."
 ---
 
 This post works through a set of calculations on a nonlinear sigma model of three scalar fields that describes a homoentropic perfect fluid — one in which entropy per particle is spatially uniform as an algebraic identity, not merely as a conservation law — for every Lagrangian in the family. The fields $\phi^{I} = (r_{L}, \varphi_{L}, z_{L})$ are the Lagrangian (material) coordinates of the fluid: they label individual fluid elements, and their level sets trace out the elements' worldlines. The Lagrangian is $\mathcal{L} = \Lambda^4 F(X)$, where $X = \det G \cdot \det B$ packs the target-space metric determinant and kinetic matrix determinant into a single target-space scalar. Four results stand out: the stress-energy tensor is a perfect fluid for every smooth $F$; constant rigid rotation singles out the logarithmic family $F = \alpha \ln X$ with the equation of state $p + \rho = \mathrm{const.}$; a pressureless fluid ($p = 0$) cannot rotate; and for a linear equation of state $p = w\rho$ the rotation profile is the explicit power law $\omega \propto r^{-(1+w)/w}$.
+
+*This derivation was carried out with the help of Claude Code — an early, informal instance of the agent-assisted derivation workflow later formalized with claims-ledger verification, discussed in [Reproducible agent-based research in theoretical cosmology](/research/#reproducible-agent-based-research-in-theoretical-cosmology).*
 
 ---
 

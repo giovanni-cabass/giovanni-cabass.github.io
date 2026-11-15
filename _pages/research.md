@@ -46,4 +46,6 @@ This ledger-based approach to verifiability converges, independently, with a pub
 
 Demo: [DBI claims-verification demo (on GitHub)](https://github.com/giovanni-cabass/dbi_claims_demo)
 
+Earlier, informal example — no claims-ledger machinery yet, just an LLM coding agent doing an actual derivation: [Rotating perfect fluids via the nonlinear sigma model](/notes/2026/04/14/rotating-perfect-fluids-nonlinear-sigma-model/)
+
 <div class="research-clear"></div>
