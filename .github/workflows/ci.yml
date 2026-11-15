@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check for leaked secrets/PII
+        run: bash scripts/check_secrets.sh
+
+      - name: Verify pinned CDN resources still match their SRI hashes
+        run: python3 scripts/check_sri.py
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+
+      - name: Build site
+        run: bundle exec jekyll build
+
+      - name: Verify inline <script> blocks still match their CSP sha256 hashes
+        run: python3 scripts/check_csp_hashes.py
+
+      - name: Install poppler-utils (for pdfinfo)
+        run: sudo apt-get update && sudo apt-get install -y poppler-utils
+
+      - name: Verify the CV PDF has no embedded JavaScript
+        run: pdfinfo assets/cv/cv.pdf | grep -q "JavaScript: no"
