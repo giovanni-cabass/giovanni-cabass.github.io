@@ -13,6 +13,8 @@ Inflation could have taken place at energy scales as high as H ∼ 10¹⁴ GeV �
 
 Key papers: Cabass et al. (2022), [arXiv:2201.07238](https://arxiv.org/abs/2201.07238); Cabass et al. (2022), [arXiv:2204.01781](https://arxiv.org/abs/2204.01781); Cabass et al. (2024), [arXiv:2404.01894](https://arxiv.org/abs/2404.01894)
 
+Code contributions: listed author on [CLASS-PT](https://github.com/Michalychforever/CLASS-PT) (the perturbation-theory Boltzmann-code extension used throughout) and [the BOSS full-shape likelihood pipeline](https://github.com/oliverphilcox/full_shape_likelihoods) — contributed working locally with Mikhail Ivanov and Oliver Philcox, who implemented and pushed the changes.
+
 <div class="research-clear"></div>
 
 ## Large-scale structure and field-level inference
