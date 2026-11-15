@@ -38,4 +38,4 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y poppler-utils
 
       - name: Verify the CV PDF has no embedded JavaScript
-        run: pdfinfo assets/cv/cv.pdf | grep -q "JavaScript: no"
+        run: 'pdfinfo assets/cv/cv.pdf | grep -qE "JavaScript:[[:space:]]*no"'
