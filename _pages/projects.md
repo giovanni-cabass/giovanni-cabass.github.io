@@ -11,7 +11,7 @@ permalink: /projects/
     <div class="project-desc">Autoencoders trained to preserve distances, not just reconstruct inputs — so two things far apart in reality don't land oddly close together once compressed. The distance-preservation is enforced two different ways: locally, by penalizing the decoder's Jacobian directly at each encoded point (demonstrated on a toy cylinder manifold); and globally, by matching pairwise distances between encoded points to their original high-dimensional distances, weighted toward nearby pairs. Applied to real gravitational-wave template banks, where this lets template-bank coverage be reasoned about directly in the compressed coordinates instead of the original, expensive-to-compare waveform space.</div>
     <div class="project-tags">
       <span>PyTorch</span>
-      <span>Riemannian geometry</span>
+      <span>Differential geometry</span>
       <span>Autoencoders</span>
       <span>Gravitational waves</span>
     </div>

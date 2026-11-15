@@ -2,9 +2,10 @@
 layout: post
 title: "An exact formula for nonlinear inference and its perturbative consequences"
 date: 2026-03-31
+excerpt: "Given a nonlinear forward model, what does the posterior look like once the latent field has been marginalized out in the small-noise limit? The short answer is that the integral can be done exactly by a change of variables, and that two perturbative consequences — unbiasedness of the score and equality of the Fisher information with the linear estimator — both follow from a single integration by parts."
 ---
 
-This post works through Appendix A of [arXiv:2307.04706](https://arxiv.org/abs/2307.04706), joint work with Marko Simonović and Matias Zaldarriaga. The question is: given a nonlinear forward model, what does the likelihood look like once the latent field has been marginalized out in the small-noise limit? The short answer is that the integral can be done exactly by a change of variables, and that two perturbative consequences — unbiasedness of the score and equality of the Fisher information with the linear estimator — both follow from a single integration by parts. The cosmological application is what prompted it, but the argument is purely probabilistic.
+This post works through Appendix A of [arXiv:2307.04706](https://arxiv.org/abs/2307.04706), joint work with Marko Simonović and Matias Zaldarriaga. The question it addresses is: given a nonlinear forward model, what does the posterior look like once the latent field has been marginalized out in the small-noise limit? That Appendix shows that the integral can be done exactly by a change of variables, and that two perturbative consequences — unbiasedness of the score and equality of the Fisher information with the linear estimator — both follow from a single integration by parts. The cosmological application is what prompted it, but the argument is not restricted to cosmology.
 
 ---
 
